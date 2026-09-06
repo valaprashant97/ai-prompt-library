@@ -31,3 +31,8 @@ Fill in context/variables and drop it into ChatGPT, Claude, or Gemini.
 Keep prompts updated when new model capabilities or workflows change.
 
 Refine prompts based on output quality to keep the library sharp.
+
+
+📄 Pending works :
+
+Searching about payment gateways & end to end security features for projects.
