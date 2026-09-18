@@ -3,34 +3,37 @@
 ```text
 Responsive Design
 
-- Design every screen to work correctly across different screen sizes and aspect ratios.
-- Support small, medium, large, and extra-large screens where applicable.
-- Do not assume a fixed screen width or height.
-- Avoid hardcoded widths and heights unless they are genuinely required.
-- Use flexible layouts that adapt to the available screen space.
-- Use responsive padding, margins, gaps, and component sizes where appropriate.
-- Maintain proper alignment and spacing across different screen sizes.
+Goal: Build interfaces that automatically adapt to different screen sizes, orientations, and available space while preserving usability, readability, visual hierarchy, performance, and design consistency.
+
+Screen Coverage & Breakpoints
+- Design every screen to work correctly across screen sizes, aspect ratios, and orientations — small, medium, large, and extra-large, where applicable.
+- Do not assume a fixed screen width/height, and do not build layouts that depend on specific device dimensions.
+- Use breakpoints only where a genuinely different layout is needed (e.g., switching multi-column to single-column).
+
+Layout Adaptability
+- Use flexible layouts that adapt to available space, changing layout structure — not just shrinking everything — as width changes.
+- Ensure buttons, cards, lists, forms, and other components resize or reposition correctly at every size.
+- Reuse the same components across screen sizes, letting their layout adapt to available space, instead of creating duplicated screens per size unless absolutely necessary.
+
+Sizing & Scaling
+- Dynamically scale text/typography size, spacing, margins, padding, icon size, button size, card dimensions, and other UI properties based on available screen/window size — across mobile, tablet, laptop, desktop, and large/ultra-wide screens.
+- Avoid hardcoded widths, heights, and other fixed sizing wherever responsive sizing is appropriate; use fixed values only when genuinely required.
+- Scale images, icons, and charts appropriately with the surrounding layout.
+
+Text & Content Handling
 - Prevent text overflow, clipping, and overlapping UI elements.
-- Handle long text gracefully using wrapping, truncation, or adaptive layouts where appropriate.
-- Ensure buttons, cards, lists, forms, and other components resize or reposition correctly.
-- Adapt layouts when the available width changes instead of simply shrinking everything.
-- Use appropriate breakpoints when different layouts are required for different screen sizes.
-- Change multi-column layouts to single-column layouts when necessary.
-- Ensure navigation remains usable on both small and large screens.
-- Make images, icons, charts, and other visual elements scale appropriately.
-- Preserve visual hierarchy and usability across all screen sizes.
-- Ensure interactive elements remain accessible and have adequate touch targets.
-- Support different device orientations when applicable.
+- Handle long text gracefully via wrapping, truncation, or adaptive layout.
+
+Navigation & Accessibility
+- Keep navigation usable on both small and large screens.
+- Maintain proper alignment, spacing, and visual hierarchy across all screen sizes.
+- Keep interactive elements accessible with adequate touch targets.
+
+Platform & System UI
 - Handle safe areas, system bars, notches, and display cutouts correctly.
-- Avoid layouts that depend on specific device dimensions.
-- Test every important screen at multiple screen sizes before considering it complete.
+- Support different device orientations where applicable.
+
+Implementation & Testing
 - Fix responsive issues at the layout level instead of using device-specific hacks.
-- Do not create separate duplicated screens for different screen sizes unless absolutely necessary.
-- Reuse the same components while allowing their layout to adapt based on available space.
-
-Responsive Design Goal
-
-Build interfaces that automatically adapt to different screen sizes, orientations,
-and available space while preserving usability, readability, visual hierarchy,
-performance, and overall design consistency.
+- Test every important screen at multiple screen sizes before considering it complete.
 ```
