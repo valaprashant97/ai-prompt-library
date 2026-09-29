@@ -2,7 +2,12 @@
 
 ## Description
 
-A production-grade system prompt for AI coding assistants that makes existing UI fully responsive and adaptive across platforms, screen sizes, orientations, window sizes, content sizes, and input methods — preventing overflow, clipping, overlapping, broken alignment/text wrapping, unusable controls, excessive empty space, device-specific hacks, unnecessary duplicated screens, and responsive regressions.
+A detailed system prompt for AI coding assistants to make an existing UI
+responsive across the project's supported platforms, screen sizes, orientations,
+window sizes, content sizes, and input methods — preventing overflow, clipping,
+overlapping, broken alignment/text wrapping, unusable controls, excessive
+empty space, device-specific hacks, unnecessary duplicated screens, and
+responsive regressions.
 
 The AI must first detect the project's technology and use that framework's native responsive/adaptive patterns.
 
@@ -13,6 +18,11 @@ The AI must first detect the project's technology and use that framework's nativ
 Use as a **system prompt / standing instruction / project-level instruction** for AI coding assistants — e.g. Claude Code, Cursor Rules, Windsurf Rules, GitHub Copilot Instructions, Antigravity, or other AI coding agents.
 
 Use it when you want the AI to: make an existing app responsive, fix responsive UI problems, audit the complete UI, improve mobile/tablet/desktop layouts, handle dynamic window resizing, prevent overflow/clipping, adapt navigation across screen sizes, or make components content-aware — all while preserving the existing UI design.
+
+Before applying the system prompt, identify the platforms, viewport sizes,
+orientations, input methods, and accessibility settings the project supports.
+Treat device categories below as applicable only when they are in scope; do
+not claim support for targets that do not apply or could not be tested.
 
 ### Recommended Usage
 
@@ -117,7 +127,10 @@ Do NOT simply scale the entire UI up or down.
 STEP 4 — SIZING RULES
 ==================================================
 
-Every sizing-related property must scale dynamically with available screen/window size across mobile, tablet, laptop, desktop, and large/ultra-wide — not just major layout containers. This includes: text/typography size and line height, spacing, margins, padding, icon size, button size, card dimensions, and other UI properties.
+Every sizing-related property that should adapt must respond to available
+space on the project's supported screen and window sizes — not just major
+layout containers. This includes typography, spacing, margins, padding, icon
+size, button size, card dimensions, and other UI properties.
 
 Prefer flexible, intrinsic, and relative sizing: relative units (%, rem/em, vw/vh), fluid typography (e.g. `clamp()`, type scales), grid/flex behavior, min/max constraints, and content-aware sizing — using the target framework's native scaling mechanism from Step 0. Avoid fixed sizing wherever responsive sizing is appropriate.
 
@@ -210,7 +223,10 @@ STEP 13 — VALIDATION & STRESS TESTING
 
 Do NOT assume the UI is responsive because the code looks responsive. When tools are available, ACTUALLY inspect, run, preview, screenshot, or test the UI.
 
-Test at minimum these widths/contexts: small mobile portrait, large mobile portrait, mobile landscape, small tablet, large tablet, laptop, desktop, large desktop, ultra-wide desktop, and intermediate/unusual widths.
+Test representative widths and contexts for each supported target category:
+small and large mobile, mobile landscape, tablet, laptop, desktop, large
+desktop, ultra-wide, and intermediate/unusual widths where applicable. Do not
+require testing categories or platforms the project does not support.
 
 Also test: continuous window resizing, orientation changes, keyboard opening/closing, large accessibility text, empty/loading/error states, and the content edge cases from Step 6.
 
@@ -249,9 +265,9 @@ FINAL QA GATE
 
 Before declaring the work complete, verify:
 
-[ ] Mobile, tablet, laptop, desktop, and large/ultra-wide screens all work
-[ ] Portrait, landscape, and intermediate widths all work
-[ ] Dynamic resizing works
+[ ] Every in-scope mobile, tablet, laptop, desktop, and large/ultra-wide target works
+[ ] Supported portrait, landscape, and intermediate widths work
+[ ] Dynamic resizing works where the platform supports it
 [ ] No unintended horizontal or vertical overflow, clipping, overlapping, broken alignment, or broken text wrapping
 [ ] No unusable controls
 [ ] Typography, spacing, margins, padding, icon size, button size, and card dimensions scale with screen/window size rather than staying fixed where responsive sizing applies

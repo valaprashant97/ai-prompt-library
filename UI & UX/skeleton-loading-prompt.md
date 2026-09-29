@@ -71,3 +71,4 @@ Requirements:
 - Reuse existing components and styles wherever possible instead of creating duplicate implementations.
 
 The final result should provide a polished, modern, production-ready Skeleton Shimmer Loading experience that closely follows the uploaded reference image while adapting naturally to the existing application's UI.
+```

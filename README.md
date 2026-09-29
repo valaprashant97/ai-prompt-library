@@ -18,11 +18,10 @@ requirements discovery, code quality, and UI/UX work.
 | Engineering | Set project-wide coding and development standards | [Coding instructions and development principles](Coding%20Instructions%20%26%20Development%20Principles/Coding%20Instructions%20%26%20Development%20Principles.md) |
 | Documentation | Decide when and how to write useful comments | [Code commenting and documentation](Code%20Commenting%20%26%20Documentation/Code%20Commenting%20%26%20Documentation%20Guidelines.md) |
 | Requirements | Turn product context into customer-focused requirements | [Customer-based requirements gathering](Requirements%20Gathering%20From%20Ai/customer-based-requirements-gathering-prompt.md) |
-| UI/UX | Establish general UI quality and accessibility rules | [UI/UX design and quality](UI%20%26%20UX/UI%26UX%20Design%20%26%20Quality%20Guidelines.md) |
+| UI/UX | Establish general UI quality and accessibility rules | [UI/UX design and quality](UI%20%26%20UX/ui-ux-design-%26-quality-guidelines.md) |
 | UI/UX | Make an existing interface adapt across screen sizes | [Responsive UI system prompt](UI%20%26%20UX/responsive-ui-prompt.md) |
-| UI/UX | Apply concise responsive design rules | [Responsive design guidelines](UI%20%26%20UX/Responsive%20Design%20Guidelines.md) |
+| UI/UX | Apply concise responsive design rules | [Responsive design guidelines](UI%20%26%20UX/responsive-design-guidelines.md) |
 | UI/UX | Add light, dark, or system theme support | [Light and dark mode implementation](UI%20%26%20UX/light-dark-mode-prompt.md) |
-| UI/UX | Generate a complete, opinionated design specification | [UI/UX design master prompt](UI%20%26%20UX/ui-ux-design-master-prompt.md) |
 
 ## Which UI/UX prompt should I use?
 
@@ -34,8 +33,6 @@ requirements discovery, code quality, and UI/UX work.
   reference.
 - Use **Light and dark mode implementation** when adding theme support without
   redesigning the product.
-- Use **UI/UX design master prompt** at the start of a project when a detailed
-  `design.md` specification is needed.
 
 These prompts are complementary: combine a baseline guideline with one
 task-specific implementation prompt instead of pasting every UI/UX document
@@ -48,7 +45,6 @@ into the same request.
 - Run the requirements prompt with the available product and project context.
 - Resolve questions marked **Needs Clarification**.
 - Use the architecture and engineering guidelines as project constraints.
-- Use the master prompt only when a formal design specification is required.
 
 ### During implementation
 
@@ -60,9 +56,10 @@ into the same request.
 
 ### Before merging
 
-- Check loading, empty, success, and error states.
+- Check relevant loading, empty, success, and error states.
 - Check accessibility, responsive behavior, and theme behavior when applicable.
-- Remove placeholders, temporary debugging output, and stale TODOs.
+- Replace unresolved placeholders, remove temporary debugging output, and
+  update or remove stale TODOs.
 - Update the relevant prompt when a newly discovered rule should be reusable.
 
 ## Repository conventions
@@ -75,6 +72,8 @@ into the same request.
 - Avoid adding duplicate prompts; extend an existing document when the scope
   is the same.
 - Keep prompt output formats explicit so results can be reviewed consistently.
+- Treat each document as standalone; link related guidance instead of assuming
+  an AI tool can access another file automatically.
 
 ## Contributing a prompt
 

@@ -119,7 +119,9 @@ Do not over-engineer the project just to follow SOLID.
 * Follow platform-specific design guidelines and conventions.
 * Ensure every screen has a clear purpose and user flow.
 * Handle edge cases gracefully without breaking the UI.
-* Use confirmation dialogs for destructive actions such as delete.
+* Confirm destructive actions when they are consequential or difficult to
+  reverse; do not add needless confirmation steps for easily reversible
+  actions.
 * Make important actions visually clear and easy to access.
 * Keep forms simple, organized, and easy to complete.
 * Show meaningful validation messages for incorrect input.
