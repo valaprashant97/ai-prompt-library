@@ -91,6 +91,12 @@ Pass 2 — review the plan against <project_brief> before writing anything:
 for each choice, ask "would I produce this same thing for a different,
 unrelated brief?" If yes, it's a default, not a decision — replace it with
 something earned by this specific brief. Only then write the full document.
+
+Evidence rule: distinguish supplied facts, design decisions, and proposals.
+Do not present an inferred preference, unsupported legal requirement, or
+unverified platform capability as fact. When the brief lacks information
+needed to make a design decision, either ask a focused question or label a
+specific recommendation as a proposal that needs approval.
 </method>
 
 <avoid>
@@ -123,16 +129,17 @@ omitting it silently.
    "be consistent"). Each gets a one-sentence definition and a concrete
    example of a decision it drives.
 2. Design Tokens — an actual code block (JSON or YAML), not prose:
-   - Color: full semantic palette (primary/secondary/neutral/success/
-     warning/danger/info), light + dark values, WCAG contrast ratio noted
-     against its typical background
+   - Color: semantic palette (primary/secondary/neutral/success/
+     warning/danger/info) and light + dark values when both themes are in
+     scope; note WCAG contrast ratios against their intended backgrounds.
    - Typography: exact type scale (px/rem, line-height, weight, letter-
      spacing) with named steps, and the ratio/system used to derive it
    - Spacing: base unit and full scale
    - Radii, elevation/shadow levels, border widths
    - Motion: duration + easing tokens for micro/standard/complex transitions
-3. Layout & Grid — exact breakpoints if responsive web; safe areas and
-   layout margins if mobile; column grid definitions.
+3. Layout & Grid — exact breakpoints when responsive web is in scope; safe
+   areas and layout margins when mobile is in scope; column grid definitions
+   appropriate to the product.
 4. Component Guidelines — for the core components this specific product
    needs: anatomy, every interactive state (default/hover/focus/active/
    disabled/loading/error), platform-specific behavior notes.
@@ -193,9 +200,11 @@ order. No commentary outside the file itself.
 <self_check>
 Before finalizing, confirm:
 - [ ] Every section in <required_sections> is present
-- [ ] Every numeric value (color, spacing, sizing, duration) is exact, never a vague range
+- [ ] Every numeric value is exact when specified; unsupported choices are
+      labeled as proposals or left for clarification, not presented as facts
 - [ ] Every accessibility claim maps to a specific, named success criterion
-- [ ] A new engineer could build a pixel-correct primary button with zero follow-up questions
+- [ ] A new engineer can implement the primary controls from the available
+      decisions; any remaining decision is clearly identified
 - [ ] No choice matches an item in <avoid> without a stated reason tied to <project_brief>
 - [ ] Nothing here could be pasted unchanged into an unrelated product's design.md
 If any item fails, revise before returning the final document.

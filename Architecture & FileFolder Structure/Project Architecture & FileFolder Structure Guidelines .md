@@ -3,6 +3,10 @@
 ```text
 Use a clean, scalable, logical, and maintainable project structure.
 
+- Scale the structure to the project's size and framework; do not add layers or
+  folders without a clear need.
+- Follow established framework conventions and the existing project structure
+  unless a concrete problem justifies changing them.
 - Organize files by feature or responsibility.
 - Keep related files together.
 - Separate UI, business logic, data, services, models, and utilities.

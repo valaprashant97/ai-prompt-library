@@ -60,9 +60,10 @@ into the same request.
 
 ### Before merging
 
-- Check loading, empty, success, and error states.
+- Check relevant loading, empty, success, and error states.
 - Check accessibility, responsive behavior, and theme behavior when applicable.
-- Remove placeholders, temporary debugging output, and stale TODOs.
+- Replace unresolved placeholders, remove temporary debugging output, and
+  update or remove stale TODOs.
 - Update the relevant prompt when a newly discovered rule should be reusable.
 
 ## Repository conventions
@@ -75,6 +76,8 @@ into the same request.
 - Avoid adding duplicate prompts; extend an existing document when the scope
   is the same.
 - Keep prompt output formats explicit so results can be reviewed consistently.
+- Treat each document as standalone; link related guidance instead of assuming
+  an AI tool can access another file automatically.
 
 ## Contributing a prompt
 

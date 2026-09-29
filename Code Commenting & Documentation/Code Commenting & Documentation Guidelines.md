@@ -1,73 +1,49 @@
-📝 Clean Code & Documentation Standard : 
+# Code Commenting & Documentation Guidelines
 
-Core Rule: Code should explain what it does; comments should explain why it does it. Clean code always comes before comments.
+Use comments and documentation to preserve context that cannot be made clear
+through names and structure alone.
 
+## When to comment
 
-💡 1. When to Write Comments :
+- Explain why a non-obvious decision, business rule, workaround, or constraint
+  exists.
+- Document complex algorithms, important edge cases, and concurrency or
+  security safeguards.
+- Explain platform or dependency workarounds and link to the relevant issue or
+  documentation when available.
+- Document public APIs and shared modules using the language's conventional
+  format when callers need usage, parameter, or return-value details.
 
-💡 Explain the 'Why', Not the 'What': Clarify the business reasoning, architectural decisions, or intent behind the code.
+## When not to comment
 
-🧠 Complex Business Logic: Document intricate domain rules, non-obvious calculations, and multi-step algorithms.
+- Do not restate what clear code already says.
+- Do not use comments to excuse confusing code; improve names or structure
+  first.
+- Avoid comments on every line and remove temporary debug notes before
+  delivery.
 
-🛡️ Edge Cases & Guardrails: Highlight critical boundary conditions, potential race conditions, or specific fail-safes.
+## Maintenance
 
-🔧 Framework & Platform Workarounds: Document temporary hacks or workarounds required due to browser, API, or third-party library limitations (include issue link if possible).
+- Keep comments accurate when behavior changes; delete obsolete explanations.
+- Be concise and follow the language or framework's conventional format.
+- Use `TODO` or `FIXME` only for specific, actionable follow-up work. Include
+  enough context to understand what remains; do not remove valid tracked work
+  merely to make a change appear complete.
 
-📑 Public APIs & Shared Modules: Provide clear JSDoc / Docstrings for exposed classes, utilities, and reusable components.
+## Example
 
+```js
+// Keep the last selection while refreshing so a temporary network failure
+// does not discard the user's in-progress choice.
+const selectionToDisplay = refreshedSelection ?? previousSelection;
+```
 
-🚫 2. When NOT to Write Comments :
+The comment explains the user-facing reason for the fallback rather than
+repeating the code.
 
-🙅‍♂️ Self-Explanatory Code: Never state the obvious. If variable and function names are descriptive, skip the comment.
+## Review checklist
 
-🧹 Bad Code Cover-up: Don't use comments to explain messy code. Refactor the code first.
-
-🔊 Code Noise: Avoid over-commenting every single line; excessive text bloat reduces overall readability.
-
-🧪 Leftover Debugging: Remove temporary console.log, print, or debug comments before raising a Pull Request.
-
-
-🔄 3. Maintenance & Best Practices :
-
-⚡ Keep Comments Fresh: Always update the associated comments when refactoring or modifying logic. Outdated comments are worse than no comments.
-
-🎯 Be Concise: Keep explanations brief, clear, and straight to the point.
-
-🏷️ Clean Up Technical Debt: Track actionable tasks using standard markers (TODO:, FIXME:) with context, but clean them up before hitting production.
-
-🎨 Consistent Formatting: Stick to standard commenting formats across the repository (e.g., JSDoc, Docstrings, or standardized single-line headers).
-
-
-🔍 Quick Examples (Do vs Don't) :
-
-❌ BAD (Redundant & Obvious) :
-
-javascript
-
-// Check if user age is 18 or above
-if (user.age >= 18) { // Set isAdult to true
-    isAdult = true; 
-}
-
-
-✅ GOOD (Clear Intent & Context) :
-
-javascript
-
-// Region-specific compliance: Users under 18 in EU require parental approval 
-// due to GDPR Article 8 restrictions.
-const requiresParentalConsent = user.isEU && user.age < 18;
-
-
-🎯 Summary Checklist for PR Reviews :
-
-[ ] Can the code be simplified to eliminate the need for this comment?
-
-[ ] Does this comment explain why this approach was taken?
-
-[ ] Are public functions/APIs documented with parameters and return types?
-
-[ ] Have all temporary debug statements been removed?
-
-
-THAT'S IT!
+- Can clearer code remove the need for this comment?
+- Does the comment explain intent or a constraint rather than narrate steps?
+- Are public APIs documented where their usage is not self-evident?
+- Are comments current, and has temporary debug output been removed?

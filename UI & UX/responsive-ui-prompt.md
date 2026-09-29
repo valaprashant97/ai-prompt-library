@@ -1,12 +1,18 @@
-## Responsive UI System Prompt
+# Responsive UI System Prompt
 
 ```text
-Use this as a system prompt / standing instruction for an AI coding assistant (Claude, Cursor, v0, Windsurf, Copilot, etc.) so every UI it generates is responsive by default.
+Use this prompt when implementing or improving responsive behavior in an
+existing interface. Apply it to the platforms and screen sizes in scope; do
+not impose web, touch, or mobile-specific requirements on products that do
+not use them.
 
-You are building a fully responsive, adaptive UI that must work consistently across mobile phones, tablets, laptops, desktops, large monitors, foldable devices, and any other screen size. Follow these rules for every screen, component, and layout you produce.
+You are adapting an existing interface to the supported platforms, viewport
+sizes, and input methods identified in the project context. Follow these rules
+for each affected screen, component, and layout.
 
 Core Principles
-- Never design for a single screen size or device. Build one adaptive system, not separate versions per device.
+- Do not optimize for only one viewport when the project supports more than
+  one. Prefer adaptive layouts over duplicated device-specific screens.
 - Do not rely on fixed pixel dimensions. Use flexible units, relative sizing, and fluid layouts.
 - Avoid unnecessary hardcoded widths, heights, margins, and paddings.
 - Keep spacing, alignment, typography, and visual hierarchy consistent across all sizes.
@@ -17,16 +23,19 @@ Core Principles
 Mobile
 - Prioritize readability and one-handed usability.
 - Default to single-column layouts.
-- Keep primary actions easy to reach with touch-friendly targets (min ~44px).
+- Keep primary actions easy to reach and provide touch targets of at least
+  44 × 44 CSS pixels where touch is a supported input (WCAG 2.2 SC 2.5.8
+  requires 24 × 24 CSS pixels or sufficient spacing; 44 × 44 is a usability
+  target, not the WCAG AA minimum).
 - Don't crowd multiple elements onto one row.
 - No horizontal scrolling unless it's intentional (e.g., carousels).
-- Support both portrait and landscape.
+- Support portrait and landscape when both orientations are in scope.
 
 Tablet
 - Use the extra space deliberately — wider content areas, grids, or multi-column layouts where it makes sense.
 - Don't just stretch the mobile layout to fill the screen.
 - Keep spacing comfortable and line lengths readable.
-- Support both portrait and landscape.
+- Support portrait and landscape when both orientations are in scope.
 
 Desktop / Laptop
 - Use available width without letting content sprawl edge-to-edge; apply sensible max-widths for readability.
@@ -39,7 +48,8 @@ Large / Extra-Large Screens
 - Use extra space meaningfully (more context, not more clutter).
 
 Breakpoints
-- Base breakpoints on available width, not specific device models.
+- Choose breakpoints from the content and layout needs, not named device
+  models. Do not invent a universal breakpoint set.
 - Collapse multi-column layouts to fewer columns (or one) as space shrinks.
 - Show, hide, resize, or reposition secondary elements as needed per breakpoint.
 - Keep responsive behavior predictable and consistent app-wide.
@@ -58,32 +68,37 @@ Interaction
 
 System & Display
 - Respect safe areas, notches, cutouts, and rounded corners.
-- Support multiple device pixel densities (crisp at 1x, 2x, 3x).
+- Keep assets legible at the pixel densities supported by the project.
 - Handle orientation changes and window resizing without breaking the layout.
 - Keep the UI functional during dynamic window resizing, not just at fixed sizes.
 
 Testing Checklist
-- Verify key screens at mobile, tablet, laptop, desktop, and large-monitor widths
-- Test portrait and landscape orientations
-- Resize the window/viewport continuously and check for breakage
+- Verify key screens at representative widths and orientations supported by
+  the project
+- Test each supported orientation
+- Resize windows or viewports dynamically where the platform supports it
+  and check for breakage
 - Check for overflow, clipping, misalignment, and bad text wrapping
 - Fix issues at the layout/component level — no device-specific hacks
 
 ## Project Implementation Instructions
 
-- First analyze the entire existing project before making responsive changes.
-- Identify every screen, page, widget, component, layout, navigation element, form, card, dialog, table, chart, and other UI element.
-- Make the existing UI fully responsive across mobile, tablet, laptop, desktop, large monitors, foldable devices, portrait, landscape, and dynamically resized windows.
-- Do not redesign the existing UI unnecessarily.
-- Preserve the current design, colors, typography, visual style, functionality, and user experience.
-- Only adapt layouts, spacing, sizing, positioning, navigation, and component behavior where required for responsiveness.
-- Do not break or remove any existing functionality while making the UI responsive.
-- Check every screen at different screen widths and fix all responsive issues.
-- Specifically check for overflow, clipping, overlapping elements, misalignment, incorrect text wrapping, excessive empty space, cramped layouts, and unusable controls.
-- Fix responsive problems at the component/layout level rather than adding device-specific hacks.
-- Avoid creating duplicate screens for different devices unless absolutely necessary.
-- After implementation, review the complete project again and ensure responsive behavior is consistent across the entire app.
+- Inspect the existing project and affected UI before changing layouts. Expand
+  the review to related screens when they share components or navigation.
+- Confirm which platforms, viewport sizes, orientations, and input methods are
+  in scope; do not claim support for untested targets.
+- Preserve existing design and behavior. Change layout, spacing, sizing,
+  positioning, or navigation only where needed for the target sizes.
+- Reuse components and adapt their layout instead of duplicating screens.
+- Check affected UI for overflow, clipping, overlap, poor text wrapping,
+  cramped controls, and excessive empty space.
+- Test representative supported sizes and orientations. Resize windows
+  dynamically only on platforms where window resizing applies.
+- Fix issues at the shared component or layout level, then verify related
+  screens still work.
 
 Goal
-Deliver one unified, adaptive UI system that automatically adjusts layout, spacing, sizing, navigation, and component behavior across all supported screen sizes, while staying usable, readable, accessible, performant, and visually consistent.
+Deliver an adaptive interface for the project's supported sizes and input
+methods. Preserve existing behavior, and clearly report untested targets
+rather than claiming universal coverage.
 ```
