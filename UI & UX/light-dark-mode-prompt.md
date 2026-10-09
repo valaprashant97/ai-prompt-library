@@ -58,10 +58,13 @@ Support:
 - Dark Mode
 - System / Automatic Mode, if supported by the platform
 
-If a theme selector already exists, integrate with it instead of creating another one.
+If a theme selector already exists, integrate with it instead of creating
+another one.
 
-If no theme selector exists, add a simple and consistent theme selection option
-in the appropriate settings area.
+If no theme selector exists, add a simple option in the existing settings area
+when theme choice fits the product. Do not create a new settings screen solely
+to expose this control; if there is no suitable place, follow the project's
+existing preferences pattern.
 
 ## Theme Persistence
 

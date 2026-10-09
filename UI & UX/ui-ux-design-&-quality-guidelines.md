@@ -12,7 +12,8 @@ Create a clean, modern, professional, and production-ready UI/UX.
 - Keep navigation simple, predictable, and easy to understand.
 - Minimize unnecessary steps, clicks, and interactions.
 - Provide clear loading, empty, success, and error states.
-- Use smooth and subtle animations where appropriate.
+- Use subtle motion only when it clarifies state or relationships; respect the
+  platform's reduced-motion preference.
 - Make buttons and interactive elements easy to identify and use.
 - Ensure proper touch target sizes on mobile devices.
 - Provide immediate visual feedback after user actions.
@@ -24,7 +25,9 @@ Create a clean, modern, professional, and production-ready UI/UX.
 - Reuse common UI components to maintain consistency.
 - Avoid inconsistent layouts, colors, fonts, icons, or spacing.
 - Use meaningful empty states instead of blank screens.
-- Use confirmation dialogs for destructive actions such as delete.
+- Confirm destructive actions when they are consequential or difficult to
+  reverse; do not add needless confirmation steps for easily reversible
+  actions.
 - Make important actions visually clear and easy to access.
 - Keep forms simple, organized, and easy to complete.
 - Show meaningful validation messages for incorrect input.

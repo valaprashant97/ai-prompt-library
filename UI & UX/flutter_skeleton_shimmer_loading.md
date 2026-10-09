@@ -45,3 +45,4 @@ throughout this Flutter project using the `shimmer` package.
     by the Flutter project.
 -   Run `flutter analyze` and fix all issues introduced by the
     implementation.
+```
