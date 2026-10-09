@@ -43,4 +43,3 @@ Correctness
 → Readability
 → Performance
 → Simplicity
-```
