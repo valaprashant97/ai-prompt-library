@@ -1,0 +1,5 @@
+**Prompt Name: Consistent UI/UX Across All Screens**
+
+```text
+Analyze my entire Flutter project and make the UI/UX consistent across every screen. Use a unified design system with the same color palette, typography, spacing, padding, corner radius, buttons, cards, icons, navigation, and component styles. Maintain consistent layouts and visual hierarchy while adapting appropriately to each screen's functionality. Support light and dark themes consistently, ensure responsive layouts, smooth animations, and accessibility. Create reusable widgets and centralized theme configuration to avoid duplicated code. Preserve all existing features, business logic, navigation, and functionality. Do not redesign each screen independently or introduce unnecessary visual styles. Apply changes across the entire project and ensure every screen feels like part of one professional, modern, polished application.
+```
