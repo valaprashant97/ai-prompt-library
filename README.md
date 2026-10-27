@@ -89,3 +89,5 @@ into the same request.
 Prompts should be reviewed when model capabilities, platform guidance, or
 project workflows change. Keep the library focused on reusable guidance rather
 than one-off project decisions.
+
+<!-- verified repository -->
