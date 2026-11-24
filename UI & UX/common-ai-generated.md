@@ -14,6 +14,40 @@ It is especially useful when:
 - You want a checklist-style report of what was fixed and what needs
   your input.
 
+## Prompt
+Check my UI for these common AI-generated tells, and fix or replace them where appropriate:
+
+1. Harsh gradients
+2. Pure white backgrounds
+3. Rainbow coloring
+4. Heavy drop shadows
+5. Liquid glass effects
+6. Purple and black color schemes
+7. Radial orbs
+8. Neon colors
+9. Basic pastel colors
+10. Default Lucide icons
+11. Emojis used as icons
+12. Default Inter / Geist / Space Grotesk fonts
+13. Sparkle icons
+14. Animated arrows
+15. Hover animations on everything
+16. Three feature cards in a row
+17. Colored left stripes on cards
+18. Bento grids
+19. Terminal window mockups
+20. Three pricing tiers
+21. Generic soft rounded corners
+22. Dot grid backgrounds
+23. Em dashes
+24. "It's not X, it's Y" copy
+25. Checkmark bullet lists
+26. Fake testimonials
+27. Missing real product demos
+28. Missing skeleton loaders
+29. Missing Terms of Service
+30. Missing Privacy Policy
+
 ## Short Description
 
 This prompt instructs an AI coding tool to scan the project for 30
@@ -21,6 +55,7 @@ common AI-design tells (gradients, pure white backgrounds, default
 fonts, bento grids, fake testimonials, missing legal pages and more),
 fix them in code, and return a clear report, while preserving the
 existing layout, content structure and functionality.
+
 
 ## Prompt
 
